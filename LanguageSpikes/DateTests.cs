@@ -41,6 +41,16 @@ namespace LanguageSpikes
         }
 
         [Test]
+        public void ShouldReturnTrueWhenTwoDatesHaveSameTicksButAreDifferentKinds()
+        {
+            var d1 = new DateTime(100000L, DateTimeKind.Local);
+            var d2 = new DateTime(100000L, DateTimeKind.Utc);
+
+            Assert.That(d1.Kind, Is.Not.EqualTo(d2.Kind));
+            Assert.That(d1, Is.EqualTo(d2));
+        }
+
+        [Test]
         public void ShouldCreateUtcDateThatIsUnspecifiedToRealUtc()
         {
             var dUnspecified = new DateTime(2014, 1, 1);
