@@ -55,7 +55,6 @@ namespace LanguageSpikes
         {
             var dUnspecified = new DateTime(2014, 1, 1);
             var dUtc = DateTime.SpecifyKind(dUnspecified, DateTimeKind.Utc);
-                //new DateTime(dUnspecified.Ticks, DateTimeKind.Utc);
 
             Assert.That(dUtc.Kind, Is.EqualTo(DateTimeKind.Utc));
             Assert.That(dUtc, Is.EqualTo(dUnspecified));
